@@ -12,7 +12,7 @@ const fallbackData: Student[] = [
     updatedAt: "2024-01-02T12:00:00.000Z",
     Class: "10-A",
     admissiondts: "2024-01-01T09:00:00.000Z",
-    statusts: "Active",
+    status: "Active",
   },
   // Add more fallback students as needed
 ];

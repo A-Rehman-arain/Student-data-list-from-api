@@ -8,6 +8,6 @@ export interface Student {
   updatedAt: string;
   Class: string;
   admissiondts: string;
-  statusts: string;
+  status: string;
 }
 

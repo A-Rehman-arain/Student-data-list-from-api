@@ -1,7 +1,5 @@
 
 
-
-// components/StudentTable.tsx
 "use client";
 
 import { useState, useMemo } from "react";
@@ -17,7 +15,6 @@ const StudentTable = ({ students, classList }: StudentTableProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
 
-  // Filtered students based on search + selected class
   const filteredStudents = useMemo(() => {
     return students.filter((student) => {
       const matchesSearch =
@@ -35,23 +32,24 @@ const StudentTable = ({ students, classList }: StudentTableProps) => {
   }, [students, searchTerm, selectedClass]);
 
   return (
-    <div className="p-6 max-w-6xl mx-auto">
-      <h2 className="text-2xl font-semibold mb-4">Student Records</h2>
+    <div className="px-4 py-6 max-w-screen-xl mx-auto">
+      <h2 className="text-xl sm:text-2xl font-semibold mb-6 text-center">
+        Student Records
+      </h2>
 
-      {/* Search and Filter Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 mb-6">
+      {/* Search + Filter */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 max-w-3xl mx-auto">
         <input
           type="text"
           placeholder="Search..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="border rounded px-3 py-2 w-full sm:w-1/2"
+          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-
         <select
           value={selectedClass}
           onChange={(e) => setSelectedClass(e.target.value)}
-          className="border rounded px-3 py-2 mt-3 sm:mt-0 sm:w-1/3"
+          className="border border-gray-300 rounded px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">All Classes</option>
           {classList.map((cls, index) => (
@@ -62,9 +60,9 @@ const StudentTable = ({ students, classList }: StudentTableProps) => {
         </select>
       </div>
 
-      {/* Table */}
+      
       <div className="overflow-x-auto">
-        <table className="w-full border-collapse border text-sm">
+        <table className="w-full min-w-[600px] border-collapse border text-sm sm:text-base">
           <thead>
             <tr className="bg-gray-100 text-left">
               <th className="border p-2">ID</th>
@@ -83,14 +81,16 @@ const StudentTable = ({ students, classList }: StudentTableProps) => {
                 <td className="border p-2">
                   {format(new Date(student.admissiondts), "yyyy-MM-dd")}
                 </td>
-                <td className="border p-2">{student.statusts}</td>
+                <td className="border p-2">{student.status}</td>
               </tr>
             ))}
           </tbody>
         </table>
 
         {filteredStudents.length === 0 && (
-          <p className="text-center mt-4 text-gray-500">No matching students found.</p>
+          <p className="text-center mt-4 text-gray-500">
+            No matching students found.
+          </p>
         )}
       </div>
     </div>
