@@ -1,59 +1,5 @@
 
 
-// // components/StudentTable.tsx
-// import { format } from "date-fns";
-// import { Student } from "../../types/student";
-
-// // Define the props interface for StudentTable
-// interface StudentTableProps {
-//   students: Student[];
-//   classList: string[]; // Add the classList property to the props
-// }
-
-// const StudentTable = ({ students, classList }: StudentTableProps) => {
-//   return (
-//     <div className="p-6 max-w-4xl mx-auto">
-//       {/* Render the classList if needed */}
-//       <div className="mb-4">
-//         <h3>Classes:</h3>
-//         <ul>
-//           {classList.map((classItem, index) => (
-//             <li key={index}>{classItem}</li>
-//           ))}
-//         </ul>
-//       </div>
-
-//       <table className="w-full border-collapse border">
-//         <thead>
-//           <tr className="bg-gray-100">
-//             <th className="border p-2">ID</th>
-//             <th className="border p-2">Name</th>
-//             <th className="border p-2">Class</th>
-//             <th className="border p-2">Admission Date</th>
-//             <th className="border p-2">Status</th>
-//           </tr>
-//         </thead>
-//         <tbody>
-//           {students.map((student) => (
-//             <tr key={student.id}>
-//               <td className="border p-2">{student.id}</td>
-//               <td className="border p-2">{student.name}</td>
-//               <td className="border p-2">{student.Class}</td>
-//               <td className="border p-2">
-//                 {format(new Date(student.admissiondts), "yyyy-MM-dd")}
-//               </td>
-//               <td className="border p-2">{student.statusts}</td>
-//             </tr>
-//           ))}
-//         </tbody>
-//       </table>
-//     </div>
-//   );
-// };
-
-// export default StudentTable;
-
-
 
 // components/StudentTable.tsx
 "use client";

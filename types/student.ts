@@ -11,10 +11,3 @@ export interface Student {
   statusts: string;
 }
 
-// export interface Student {
-//   id: number;
-//   name: string;
-//   Class: string;
-//   admissiondts: string; // or Date, based on your API
-//   status: string;
-// }
